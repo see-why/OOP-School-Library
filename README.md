@@ -1,5 +1,5 @@
-# MorseCode
-A program in Ruby that decrypts Morse Code into plain English.
+# OOP-School-Library
+A command line school library app.
 
 ## Built With
 
@@ -16,17 +16,12 @@ A program in Ruby that decrypts Morse Code into plain English.
 - **$ git checkout ...**
 - **$ run `bundle install` to couple all dependacies**
 - **$ run `ruby main.rb`**
+- **$ To run a particular ruby file in an irb session it helps to run `irb -r ./file_Name`**
 
 👤 **Cyril Iyadi**
 
 - GitHub: [@see-why](https://github.com/see-why)
 - LinkedIn: [C.Iyadi](https://www.linkedin.com/in/cyril-iyadi-83517270/)
-
-👤 **Orora Brian**
-
-- GitHub: [@MrBrN197](https://github.com/MrBrN197)
-- LinkedIn: [@Orora-brian](linkedin.com/in/orora-brian)
-
 
 ## 🤝 Contributing
 
