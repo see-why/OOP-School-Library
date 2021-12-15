@@ -7,10 +7,11 @@ class Person
     @age = age
     @parent_permission = parent_permission
     @corrector = Corrector.new
+    @rentals = []
   end
 
   attr_accessor :name, :age
-  attr_reader :id, :parent_permission
+  attr_reader :id, :parent_permission, :rentals
 
   def can_use_services?
     of_age? && @parent_permission # linters insisted on changing is_of_age to of_age
@@ -18,6 +19,11 @@ class Person
 
   def validate_name
     @name = @corrector.correct_name(@name)
+  end
+
+  def add_rental(rental)
+    @rentals.push(rental)
+    rental.person = self
   end
 
   private
