@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require_relative 'modules/appfunctions'
+require 'pry'
 
 class App
   include AppFunctions
@@ -90,7 +91,7 @@ class App
     puts 'RENTALS:'
     if person != ''
       person.rentals.each_with_index do |rental, _i|
-        puts "Date: #{rental.date}, Book: '#{rental.book.title}', Author: '#{rental.book.author}'"
+        puts "Date: #{rental.date}, Book: '#{rental.book.title}', Author: '#{rental.book.author}'" unless rental.nil?
       end
     end
     puts "\n"
@@ -99,7 +100,7 @@ class App
   def display_books
     puts 'BOOKS:'
     @book_list.each_with_index do |book, i|
-      puts "(#{i}) Title: #{book.title}, Author: #{book.author}"
+      puts "(#{i}) Title: #{book.title}, Author: #{book.author}" unless book.nil?
     end
     puts "\n"
   end
@@ -115,7 +116,7 @@ class App
   def display_persons
     puts 'PEOPLE:'
     @people_list.each_with_index do |person, i|
-      puts "(#{i}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      puts "(#{i}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" unless person.nil?
     end
     puts "\n"
   end
@@ -157,7 +158,7 @@ class App
 
     date = validate_name('date')
 
-    @book_list.push(create_rental(date, book, person))
+    @rental_list.push(create_rental(date, book, person))
     puts "Rental created successfully\n"
   end
 end
