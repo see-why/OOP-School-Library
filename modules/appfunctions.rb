@@ -83,18 +83,18 @@ module AppFunctions
   end
 
   def save_data
-    people_list = @people_list.map do |people|
-      {'class' => people.class, 'age' => people.age, 'specialization' => (people.specialization if people.class == '2'), 'parent_permission' => people.parent_permission}
+    people_list = @people_list.each_with_index.map do |people, index|
+      {'class' => people.class, 'age' => people.age, 'specialization' => (people.specialization if people.class.to_s == 'Teacher'), 'parent_permission' => people.parent_permission, 'index' => index}
     end
       File.write('people_list.json', JSON.generate(people_list))
-    book_list = @book_list.map do |book|
-      {'title' => book.title, 'author' => book.author}
+    book_list = @book_list.each_with_index.map do |book, index|
+      {'title' => book.title, 'author' => book.author, 'index' => index}
     end
     File.write('book_list.json', JSON.generate(book_list))
     rental_list = @rental_list.map do |rental|
-      {'date' => rental.date, 'book' => rental.book, 'person' => rental.person}
+      {'date' => rental.date, 'book-index' => @book_list.index(rental.book) , 'person-index' => @people_list.index(rental.person)}
     end
-    File.write('rental_list.json', JSON.generate(@rental_list))
+    File.write('rental_list.json', JSON.generate(rental_list))
   end
 
   def load_people
@@ -109,7 +109,6 @@ module AppFunctions
 
     raw_book_list = File.read('book_list.json')
     raw_book_list = JSON.parse(raw_book_list)
-    p raw_book_list
     arr = []
     raw_book_list.each do |book|
       arr.push(Book.new(book["title"], book["author"]))
