@@ -87,4 +87,25 @@ module AppFunctions
     File.write('book_list.json', JSON.generate(@book_list))
     File.write('rental_list.json', JSON.generate(@rental_list))
   end
+
+  def load_people
+    return [] unless File.exist?('people_list.json')
+
+    raw_people_list = File.read('people_list.json')
+    JSON.parse(raw_people_list)
+  end
+
+  def load_books
+    return [] unless File.exist?('book_list.json')
+
+    raw_book_list = File.read('book_list.json')
+    JSON.parse(raw_book_list)
+  end
+
+  def load_rentals
+    return [] unless File.exist?('rental_list.json')
+
+    raw_rental_list = File.read('rental_list.json')
+    JSON.parse(raw_rental_list)
+  end
 end
