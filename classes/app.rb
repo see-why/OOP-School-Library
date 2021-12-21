@@ -100,7 +100,7 @@ class App
       display_books
       book_id = gets.chomp.to_i
       book = get_book(book_id)
-      puts 'Invalid selection' if book == ''
+      empty_string?(book)
     end
 
     person = ''
@@ -109,7 +109,7 @@ class App
       display_persons
       person_index = gets.chomp.to_i
       person = get_person(person_index)
-      puts 'Invalid selection' if person == ''
+      empty_string?(person)
     end
 
     date = validate_name('date')

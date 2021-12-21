@@ -76,4 +76,8 @@ module AppFunctions
   def create_rental(date, book, person)
     Rental.new(date, book, person)
   end
+
+  def empty_string?(obj)
+    puts 'Invalid selection' if obj == ''
+  end
 end
