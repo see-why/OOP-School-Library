@@ -2,8 +2,11 @@ require_relative '../classes/book'
 require_relative '../classes/student'
 require_relative '../classes/teacher'
 require_relative '../classes/rental'
+require_relative './filefunctions'
+require 'json'
 
 module AppFunctions
+  include FileFunctions
   def initialize
     @classroom = Classroom.new('Best')
   end

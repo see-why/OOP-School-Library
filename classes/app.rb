@@ -6,9 +6,9 @@ class App
   attr_reader :book_list, :people_list, :rental_list
 
   def initialize
-    @book_list = []
-    @people_list = []
-    @rental_list = []
+    @book_list = load_books
+    @people_list = load_people
+    @rental_list = load_rentals
   end
 
   def person_created
