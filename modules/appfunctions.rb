@@ -83,8 +83,17 @@ module AppFunctions
   end
 
   def save_data
-    File.write('people_list.json', JSON.generate(@people_list))
-    File.write('book_list.json', JSON.generate(@book_list))
+    people_list = @people_list.map do |people|
+      {'class' => people.class, 'age' => people.age, 'specialization' => (people.specialization if people.class == '2'), 'parent_permission' => people.parent_permission}
+    end
+      File.write('people_list.json', JSON.generate(people_list))
+    book_list = @book_list.map do |book|
+      {'title' => book.title, 'author' => book.author}
+    end
+    File.write('book_list.json', JSON.generate(book_list))
+    rental_list = @rental_list.map do |rental|
+      {'date' => rental.date, 'book' => rental.book, 'person' => rental.person}
+    end
     File.write('rental_list.json', JSON.generate(@rental_list))
   end
 
@@ -99,7 +108,13 @@ module AppFunctions
     return [] unless File.exist?('book_list.json')
 
     raw_book_list = File.read('book_list.json')
-    JSON.parse(raw_book_list)
+    raw_book_list = JSON.parse(raw_book_list)
+    p raw_book_list
+    arr = []
+    raw_book_list.each do |book|
+      arr.push(Book.new(book["title"], book["author"]))
+    end
+    arr
   end
 
   def load_rentals
