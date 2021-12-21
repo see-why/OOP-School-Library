@@ -2,6 +2,7 @@ require_relative '../classes/book'
 require_relative '../classes/student'
 require_relative '../classes/teacher'
 require_relative '../classes/rental'
+require 'json'
 
 module AppFunctions
   def initialize
@@ -79,5 +80,11 @@ module AppFunctions
 
   def empty_string?(obj)
     puts 'Invalid selection' if obj == ''
+  end
+
+  def save_data
+    File.write('people_list.json', JSON.generate(@people_list))
+    File.write('book_list.json', JSON.generate(@book_list))
+    File.write('rental_list.json', JSON.generate(@rental_list))
   end
 end

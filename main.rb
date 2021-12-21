@@ -27,6 +27,7 @@ def main
     when 6
       @app.display_rentals
     when 7
+      @app.save_data
       puts 'Closing library.....'
     else
       puts 'Invalid input'
