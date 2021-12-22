@@ -1,6 +1,6 @@
 require_relative '../classes/teacher'
 
-describe Student do
+describe Teacher do
   context 'Teacher class Test' do
     age = 45
     specialization = 'Software testing'
@@ -8,7 +8,7 @@ describe Student do
     teacher2 = Teacher.new(age * 2, specialization, 'Roger')
     teacher3 = Teacher.new(1, specialization, 'Roger')
 
-    it 'is an instance of class Student' do
+    it 'is an instance of class Teacher' do
       expect(teacher1).to be_an_instance_of(Teacher)
     end
 
