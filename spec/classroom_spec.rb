@@ -11,7 +11,7 @@ describe Student do
     classroom1.add_student(student1)
     classroom2.add_student(student2)
     classroom2.add_student(student3)
-    
+
     it 'initializes with the correct label' do
       expect(classroom1.label).to eql('math')
       expect(classroom2.label).to eql('history')

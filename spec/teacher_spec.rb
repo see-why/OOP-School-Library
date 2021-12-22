@@ -5,7 +5,7 @@ describe Student do
     age = 45
     specialization = 'Software testing'
     teacher1 = Teacher.new(age, specialization)
-    teacher2 = Teacher.new(age*2, specialization, 'Roger')
+    teacher2 = Teacher.new(age * 2, specialization, 'Roger')
     teacher3 = Teacher.new(1, specialization, 'Roger')
 
     it 'is an instance of class Student' do

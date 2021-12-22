@@ -5,7 +5,6 @@ describe Student do
   context 'Student class Test' do
     age = 15
     classroom = 'test classroom'
-    parent_permission = false
     student1 = Student.new(age, classroom, false)
     student2 = Student.new(age, classroom, true, 'Abby')
 
