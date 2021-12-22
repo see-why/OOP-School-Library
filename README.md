@@ -17,11 +17,17 @@ A command line school library app.
 - **$ run `bundle install` to couple all dependacies**
 - **$ run `ruby main.rb`**
 - **$ To run a particular ruby file in an irb session it helps to run `irb -r ./file_Name`**
+- **$ For tests run `rspec spec`**
 
 👤 **Cyril Iyadi**
 
 - GitHub: [@see-why](https://github.com/see-why)
 - LinkedIn: [C.Iyadi](https://www.linkedin.com/in/cyril-iyadi-83517270/)
+
+👤 **Leonardo Paz**
+
+- Github: [Leonardo Paz](https://github.com/leolpaz)
+- Linkedin: [Leonardo Paz](https://www.linkedin.com/in/leonardolpaz/)
 
 ## 🤝 Contributing
 
